@@ -142,23 +142,6 @@ public class ShareClient {
         }
     }
 
-    // in Dec 2021, Dexcom changed json for Share so trend is a string rather than an int
-    // from link below, get translation between old int and new string
-    //      https://github.com/nightscout/share2nightscout-bridge/blob/976fce4/index.js
-    /* var DIRECTIONS = {
-            NONE: 0
-            , DoubleUp: 1
-            , SingleUp: 2
-            , FortyFiveUp: 3
-            , Flat: 4
-            , FortyFiveDown: 5
-            , SingleDown: 6
-            , DoubleDown: 7
-            , 'NOT COMPUTABLE': 8
-            , 'RATE OUT OF RANGE': 9
-            };
-     */
-
     private func fetchLastWithRetries(_ n: Int, remaining: Int, callback: @escaping (ShareError?, [ShareGlucose]?) -> Void) {
         ensureToken() { (error) in
             guard error == nil else {
@@ -200,31 +183,20 @@ public class ShareClient {
                     }
 
                     var transformed: Array<ShareGlucose> = []
+                    // Dec 2021, Dexcom Share modified json encoding of Trend from int to string
+                    let trendmap = ["": 0, "DoubleUp":1, "SingleUp":2, "FortyFiveUp":3, "Flat":4, "FortyFiveDown":5, "SingleDown":6, "DoubleDown": 7, "NotComputable":8, "RateOutOfRange":9]
                     for sgv in sgvs {
-                        var trend = UInt8(0)  // corresponds to trendString of "NONE"
-                        if let glucose = sgv["Value"] as? Int, let trendString = sgv["Trend"] as? String, let wt = sgv["WT"] as? String {
-                            if trendString == "DoubleUp" {
-                                trend = 1
-                            } else if trendString == "SingleUp" {
-                                trend = 2
-                            } else if trendString == "FortyFiveUp" {
-                                trend = 3
-                            } else if trendString == "Flat" {
-                                trend = 4
-                            } else if trendString == "FortyFiveDown" {
-                                trend = 5
-                            } else if trendString == "SingleDown" {
-                                trend = 6
-                            } else if trendString == "DoubleDown" {
-                                trend = 7
-                            } else if trendString == "NOT COMPUTABLE" {
-                                trend = 8
-                            } else if trendString == "RATE OUT OF RANGE" {
-                                trend = 9
-                            }
+                        if let glucose = sgv["Value"] as? Int, let strend = sgv["Trend"] as? String, let wt = sgv["WT"] as? String {
+                            let itrend = trendmap[strend, default: 0]
                             transformed.append(ShareGlucose(
                                 glucose: UInt16(glucose),
-                                trend: trend,
+                                trend: UInt8(itrend),
+                                timestamp: try self.parseDate(wt)
+                            ))
+                        } else if let glucose = sgv["Value"] as? Int, let trend = sgv["Trend"] as? Int, let wt = sgv["WT"] as? String {
+                            transformed.append(ShareGlucose(
+                                glucose: UInt16(glucose),
+                                trend: UInt8(trend),
                                 timestamp: try self.parseDate(wt)
                             ))
                         } else {

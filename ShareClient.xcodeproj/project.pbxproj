@@ -13,7 +13,6 @@
 		4325E9D5210E6B4400969CE5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325E9D4210E6B4300969CE5 /* UIColor.swift */; };
 		432B0E8C1CDFC3C50045347B /* ShareClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 432B0E8B1CDFC3C50045347B /* ShareClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		432B0E931CDFC3C50045347B /* ShareClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432B0E881CDFC3C50045347B /* ShareClient.framework */; };
-		432B0E981CDFC3C50045347B /* ShareClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B0E971CDFC3C50045347B /* ShareClientTests.swift */; };
 		43A8EC7C210E661400A81379 /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A8EC7B210E661400A81379 /* LoopKit.framework */; };
 		43A8EC86210E664300A81379 /* ShareClientUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A8EC84210E664300A81379 /* ShareClientUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43A8EC8A210E664C00A81379 /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A8EC7B210E661400A81379 /* LoopKit.framework */; };
@@ -82,9 +81,6 @@
 		432B0E881CDFC3C50045347B /* ShareClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShareClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		432B0E8B1CDFC3C50045347B /* ShareClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareClient.h; sourceTree = "<group>"; };
 		432B0E8D1CDFC3C50045347B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		432B0E921CDFC3C50045347B /* ShareClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		432B0E971CDFC3C50045347B /* ShareClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareClientTests.swift; sourceTree = "<group>"; };
-		432B0E991CDFC3C50045347B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A8EC7B210E661400A81379 /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A8EC82210E664300A81379 /* ShareClientUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShareClientUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A8EC84210E664300A81379 /* ShareClientUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareClientUI.h; sourceTree = "<group>"; };
@@ -185,7 +181,6 @@
 			children = (
 				43AB51342133176B00B3D58D /* Common */,
 				432B0E8A1CDFC3C50045347B /* ShareClient */,
-				432B0E961CDFC3C50045347B /* ShareClientTests */,
 				43A8EC83210E664300A81379 /* ShareClientUI */,
 				432B0E891CDFC3C50045347B /* Products */,
 				43A8EC7A210E661300A81379 /* Frameworks */,
@@ -196,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				432B0E881CDFC3C50045347B /* ShareClient.framework */,
-				432B0E921CDFC3C50045347B /* ShareClientTests.xctest */,
 				43A8EC82210E664300A81379 /* ShareClientUI.framework */,
 				A9ED4DA4225EB4D30080DEBA /* ShareClient.framework */,
 			);
@@ -217,15 +211,6 @@
 				432B0E8D1CDFC3C50045347B /* Info.plist */,
 			);
 			path = ShareClient;
-			sourceTree = "<group>";
-		};
-		432B0E961CDFC3C50045347B /* ShareClientTests */ = {
-			isa = PBXGroup;
-			children = (
-				432B0E971CDFC3C50045347B /* ShareClientTests.swift */,
-				432B0E991CDFC3C50045347B /* Info.plist */,
-			);
-			path = ShareClientTests;
 			sourceTree = "<group>";
 		};
 		43A8EC7A210E661300A81379 /* Frameworks */ = {
@@ -310,25 +295,6 @@
 			productName = ShareClient;
 			productReference = 432B0E881CDFC3C50045347B /* ShareClient.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		432B0E911CDFC3C50045347B /* ShareClientTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 432B0E9F1CDFC3C50045347B /* Build configuration list for PBXNativeTarget "ShareClientTests" */;
-			buildPhases = (
-				432B0E8E1CDFC3C50045347B /* Sources */,
-				432B0E8F1CDFC3C50045347B /* Frameworks */,
-				432B0E901CDFC3C50045347B /* Resources */,
-				A9F2C3E0225ECF8800C3B796 /* Copy Frameworks with Carthage */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				432B0E951CDFC3C50045347B /* PBXTargetDependency */,
-			);
-			name = ShareClientTests;
-			productName = ShareClientTests;
-			productReference = 432B0E921CDFC3C50045347B /* ShareClientTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		43A8EC81210E664300A81379 /* ShareClientUI */ = {
 			isa = PBXNativeTarget;
@@ -428,7 +394,6 @@
 			targets = (
 				432B0E871CDFC3C50045347B /* ShareClient */,
 				A9ED4D91225EB4D30080DEBA /* ShareClient-watchOS */,
-				432B0E911CDFC3C50045347B /* ShareClientTests */,
 				43A8EC81210E664300A81379 /* ShareClientUI */,
 			);
 		};
@@ -468,28 +433,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		A9F2C3E0225ECF8800C3B796 /* Copy Frameworks with Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/LoopKit.framework",
-			);
-			name = "Copy Frameworks with Carthage";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/LoopKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "CARTHAGE_BUILD_DIR=\"${SRCROOT}/Carthage/Build\"\nif [ -n \"${IPHONEOS_DEPLOYMENT_TARGET}\" ]; then\n    CARTHAGE_BUILD_DIR=\"${CARTHAGE_BUILD_DIR}/iOS\"\nelif [ -n \"${WATCHOS_DEPLOYMENT_TARGET}\" ]; then\n    CARTHAGE_BUILD_DIR=\"${CARTHAGE_BUILD_DIR}/watchOS\"\nelse\n    echo \"ERROR: Unexpected deployment target type\"\n    exit 1\nfi\n\nfor SCRIPT_INPUT_FILE in ${!SCRIPT_INPUT_FILE_*}; do\n    CARTHAGE_BUILD_FILE=\"${!SCRIPT_INPUT_FILE/${BUILT_PRODUCTS_DIR}/${CARTHAGE_BUILD_DIR}}\"\n    if [ -e \"${CARTHAGE_BUILD_FILE}\" ]; then\n        if [ -e \"${SCRIPT_INPUT_FILE}\" ]; then\n            echo \"ERROR: Duplicate frameworks found at:\"\n            echo \"  ${SCRIPT_INPUT_FILE}\"\n            echo \"  ${CARTHAGE_BUILD_FILE}\"\n            exit 1\n        fi\n        echo \"Substituting \\\"${CARTHAGE_BUILD_FILE}\\\" for \\\"${!SCRIPT_INPUT_FILE}\\\"\"\n        export ${SCRIPT_INPUT_FILE}=\"${CARTHAGE_BUILD_FILE}\"\n    fi\ndone\n\necho \"Copy Frameworks with Carthage\"\ncarthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		432B0E831CDFC3C50045347B /* Sources */ = {
@@ -503,14 +446,6 @@
 				43A8EC9B210E68BA00A81379 /* ShareGlucose+GlucoseKit.swift in Sources */,
 				43C418AF1CE0488900405B6A /* ShareClient.swift in Sources */,
 				43A8EC99210E682A00A81379 /* ShareService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		432B0E8E1CDFC3C50045347B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				432B0E981CDFC3C50045347B /* ShareClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,10 +694,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 2;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ShareClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -783,44 +715,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 2;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ShareClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mddub.ShareClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		432B0EA01CDFC3C50045347B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = ShareClientTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mddub.ShareClientTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		432B0EA11CDFC3C50045347B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = ShareClientTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mddub.ShareClientTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -841,10 +742,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 2;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ShareClientUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -874,10 +772,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 2;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ShareClientUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -900,10 +795,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 2;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ShareClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -928,10 +820,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 2;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ShareClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -961,15 +850,6 @@
 			buildConfigurations = (
 				432B0E9D1CDFC3C50045347B /* Debug */,
 				432B0E9E1CDFC3C50045347B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		432B0E9F1CDFC3C50045347B /* Build configuration list for PBXNativeTarget "ShareClientTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				432B0EA01CDFC3C50045347B /* Debug */,
-				432B0EA11CDFC3C50045347B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
